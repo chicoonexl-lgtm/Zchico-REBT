@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso REBT - Reglamento Electrotécnico para Baja Tensión</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Sidebar de navegación -->
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-bolt"></i>
+            <h2>Curso REBT 2025</h2>
+            <button id="sidebar-toggle-close" class="sidebar-toggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="sidebar-search">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search-input" placeholder="Buscar ITC o contenido...">
+        </div>
+
+        <div class="sidebar-menu">
+            <a href="#inicio" class="menu-item active">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </a>
+            
+            <div class="menu-section">
+                <h3><i class="fas fa-book"></i> Instrucciones Técnicas (ITC)</h3>
+                <div id="itc-list" class="itc-list"></div>
+            </div>
+            
+            <a href="#examenes" class="menu-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Exámenes Generales</span>
+            </a>
+            
+            <a href="#progreso" class="menu-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Mi Progreso</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Toggle sidebar móvil -->
+    <button id="sidebar-toggle-open" class="sidebar-toggle-mobile">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Contenido principal -->
+    <main id="main-content" class="main-content">
+        <!-- Barra superior -->
+        <header class="top-bar">
+            <div class="breadcrumb" id="breadcrumb">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </div>
+            <div class="top-bar-actions">
+                <button id="dark-mode-toggle" class="icon-btn" title="Modo oscuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="export-progress" class="icon-btn" title="Exportar progreso">
+                    <i class="fas fa-download"></i>
+                </button>
+                <button id="print-section" class="icon-btn" title="Imprimir sección">
+                    <i class="fas fa-print"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Contenido dinámico -->
+        <div id="content-area" class="content-area">
+            <!-- El contenido se cargará dinámicamente aquí -->
+        </div>
+    </main>
+
+    <!-- Asistente IA flotante -->
+    <div id="ai-assistant" class="ai-assistant">
+        <button id="ai-toggle" class="ai-toggle" title="Asistente IA REBT">
+            <i class="fas fa-bolt"></i>
+            <span class="ai-badge">IA</span>
+        </button>
+        
+        <div id="ai-chat-window" class="ai-chat-window hidden">
+            <div class="ai-chat-header">
+                <div class="ai-chat-title">
+                    <i class="fas fa-robot"></i>
+                    <span>Asistente REBT IA</span>
+                </div>
+                <button id="ai-close" class="ai-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="ai-suggestions">
+                <p><strong>Pregúntame sobre:</strong></p>
+                <button class="suggestion-btn" data-question="¿Cómo calculo la sección de un cable?">
+                    💡 Calcular sección de cable
+                </button>
+                <button class="suggestion-btn" data-question="¿Qué diferencial necesito para una vivienda?">
+                    💡 Diferenciales en viviendas
+                </button>
+                <button class="suggestion-btn" data-question="Explícame la ITC-BT-18 sobre puesta a tierra">
+                    💡 Puesta a tierra
+                </button>
+                <button class="suggestion-btn" data-question="¿Cuáles son los circuitos mínimos en una vivienda?">
+                    💡 Circuitos en viviendas
+                </button>
+            </div>
+            
+            <div id="ai-chat-messages" class="ai-chat-messages">
+                <div class="ai-message ai-assistant-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        ¡Hola! 👋 Soy tu asistente especializado en el REBT. Puedo ayudarte con:
+                        <ul>
+                            <li>Interpretación de artículos e ITC</li>
+                            <li>Cálculos eléctricos paso a paso</li>
+                            <li>Normativa aplicable</li>
+                            <li>Casos prácticos específicos</li>
+                        </ul>
+                        ¿En qué puedo ayudarte?
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ai-chat-input">
+                <textarea id="ai-input" placeholder="Escribe tu pregunta sobre el REBT..." rows="2"></textarea>
+                <button id="ai-send" class="ai-send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/ai-assistant.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
